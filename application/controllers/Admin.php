@@ -277,6 +277,8 @@ class Admin extends CI_Controller {
   public function note_verifikasi($id_siswa){
     $data['tampil'] = $this->M_admin->siswa_edit($id_siswa);
 
+    // var_dump($data);
+
     $this->load->view('template/header-admin.php');
     $this->load->view('admin/note_verifikasi', $data);
     $this->load->view('template/footer-admin.php');

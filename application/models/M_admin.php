@@ -55,7 +55,7 @@ class M_admin extends CI_Model{
     $this->db->select('*');
     $this->db->from('tb_pendaftar');
     $this->db->join('tb_kompetensi_1', 'tb_pendaftar.id_kompetensi_1 = tb_kompetensi_1.id_kompetensi_1');
-    $this->db->join('tb_kompetensi_2', 'tb_pendaftar.id_kompetensi_2 = tb_kompetensi_2.id_kompetensi_2');
+    // $this->db->join('tb_kompetensi_2', 'tb_pendaftar.id_kompetensi_2 = tb_kompetensi_2.id_kompetensi_2');
     $this->db->where('id_siswa', $id_siswa);
     $query = $this->db->get()->result();
     return $query;
