@@ -44,7 +44,7 @@
                             <thead>
                                 <tr>
                                     <th><center>No</th>
-                                    <th><center>Tgl Upload</th>
+                                    <!-- <th><center>Tgl Upload</th> -->
                                     <th><center>Nama Lengkap</th>
                                     <th><center>Asal Sekolah</th>
                                     <th><center>Kompetensi</th>
@@ -60,7 +60,7 @@
                                 ?>
                                 <tr>
                                     <td><center><?= $no++ ?></td>
-                                    <td><center><?= $row->tgl_upload ?></td>
+                                    <!-- <td><center><?= $row->tgl_upload ?></td> -->
                                     <td><?= $row->nama_siswa ?></td>
                                     <td><center><?= $row->asal_sekolah ?></td>
                                     <td><center><?= $row->short_kompetensi_1 ?></td>
