@@ -145,6 +145,60 @@ class Op_ver extends CI_Controller {
     }
    // akhir verifikasi opsi
 
+   public function ver_revisi($id_siswa)
+    {
+      $id_siswa = htmlspecialchars($id_siswa, ENT_QUOTES);
+
+      if(empty($id_siswa)){
+        redirect('index.php/Op_ver/siswa_tampil/');
+
+      } else {
+
+        $data_edit = array(
+          'status_verifikasi' => 'Revisi',
+          'status_seleksi_administrasi' => 'Belum Seleksi',
+        );
+
+        $this->M_admin->siswa_edit_up($data_edit, $id_siswa);
+
+        $this->session->set_flashdata('msg', '
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              Verifikasi Pilihan <strong>Revisi</strong> Berhasil 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>');
+            // var_dump($id_siswa);
+        redirect('index.php/Op_ver/siswa_tampil/');
+      }
+    }
+   // akhir verifikasi opsi
+
+   public function ver_tolak_permanen($id_siswa)
+   {
+     $id_siswa = htmlspecialchars($id_siswa, ENT_QUOTES);
+
+     if(empty($id_siswa)){
+       redirect('index.php/Op_ver/siswa_tampil/');
+
+     } else {
+
+       $data_edit = array(
+         'status_verifikasi' => 'Tolak Permanen',
+         'status_seleksi_administrasi' => 'Belum Seleksi',
+       );
+
+       $this->M_admin->siswa_edit_up($data_edit, $id_siswa);
+
+       $this->session->set_flashdata('msg', '
+           <div class="alert alert-success alert-dismissible fade show" role="alert">
+             Verifikasi Pilihan <strong>Tolak Permanen</strong> Berhasil 
+             <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+           </div>');
+           // var_dump($id_siswa);
+       redirect('index.php/Op_ver/siswa_tampil/');
+     }
+   }
+  // akhir verifikasi opsi
+
    // awal note verifikasi
 
     public function note_verifikasi($id_siswa){

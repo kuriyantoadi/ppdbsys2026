@@ -60,12 +60,14 @@
                                     <td><center><?= $row->short_kompetensi_1 ?></td>
                                     <td><center><?= $row->asal_sekolah ?></td>
                                    <td><center>
-                                    <?php if($row->status_verifikasi == 'Data Sesuai' ){ ?>
-                                             <a class="btn-success waves-effect waves-light btn-sm btn-sm btn-rounded">Sesuai</a>
+                                        <?php if($row->status_verifikasi == 'Data Sesuai' ){ ?>
+                                             <a class="btn-success waves-effect waves-light btn-sm btn-sm btn-rounded">Setujui</a>
                                         <?php }elseif($row->status_verifikasi == 'Proses'){ ?>
-                                             <a class="btn-info waves-effect waves-light btn-sm btn-sm btn-rounded">Proses</a>
+                                             <a class="btn-info waves-effect waves-light btn-sm btn-sm btn-rounded">Diajukan</a>
                                         <?php }elseif($row->status_verifikasi == 'Tidak Sesuai'){ ?>
-                                            <a class="btn-danger waves-effect waves-light btn-sm btn-sm btn-rounded">Tidak Sesuai</a>
+                                            <a class="btn-warning waves-effect waves-light btn-sm btn-sm btn-rounded">Revisi</a>
+                                        <?php }elseif($row->status_verifikasi == 'Tolak Permanen'){ ?>
+                                            <a class="btn-danger waves-effect waves-light btn-sm btn-sm btn-rounded">Ditolak Permanen</a>
                                         <?php }else{ ?>
                                             <a class="btn-secondary btn-sm btn-rounded">Kosong</a>
                                         <?php } ?>

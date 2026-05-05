@@ -48,12 +48,14 @@
                                     <!-- <td><center><?= $row->short_kompetensi_1 ?></td> -->
                                     <td><center><?= $row->asal_sekolah ?></td>
                                     <td><center>
-                                    <?php if($row->status_verifikasi == 'Data Sesuai' ){ ?>
-                                             <a class="btn-success waves-effect waves-light btn-sm btn-sm btn-rounded">Sesuai</a>
+                                        <?php if($row->status_verifikasi == 'Data Sesuai' ){ ?>
+                                             <a class="btn-success waves-effect waves-light btn-sm btn-sm btn-rounded">Setujui</a>
                                         <?php }elseif($row->status_verifikasi == 'Proses'){ ?>
-                                             <a class="btn-info waves-effect waves-light btn-sm btn-sm btn-rounded">Proses</a>
+                                             <a class="btn-info waves-effect waves-light btn-sm btn-sm btn-rounded">Diajukan</a>
                                         <?php }elseif($row->status_verifikasi == 'Tidak Sesuai'){ ?>
-                                            <a class="btn-danger waves-effect waves-light btn-sm btn-sm btn-rounded">Tidak Sesuai</a>
+                                            <a class="btn-warning waves-effect waves-light btn-sm btn-sm btn-rounded">Revisi</a>
+                                        <?php }elseif($row->status_verifikasi == 'Tolak Permanen'){ ?>
+                                            <a class="btn-danger waves-effect waves-light btn-sm btn-sm btn-rounded">Ditolak Permanen</a>
                                         <?php }else{ ?>
                                             <a class="btn-secondary btn-sm btn-rounded">Kosong</a>
                                         <?php } ?>
@@ -67,9 +69,10 @@
                                         <div class="dropdown-menu" aria-labelledby="btnGroupVerticalDrop1">
                                             <!-- <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/siswa_detail/'.$row->id_siswa) ?>">Detail</a> -->
                                             <!-- <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/note_verifikasi/'.$row->id_siswa) ?>">Catatan</a> -->
-                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_tidak_sesuai/'.$row->id_siswa) ?>">Tidak Sesuai</a>
-                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_proses/'.$row->id_siswa) ?>">Proses</a>
-                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_data_sesuai/'.$row->id_siswa) ?>">Data Sesuai</a>
+                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_data_sesuai/'.$row->id_siswa) ?>">Setujui</a>
+                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_proses/'.$row->id_siswa) ?>">Diajukan</a>
+                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_tidak_sesuai/'.$row->id_siswa) ?>">Revisi</a>
+                                            <a class="dropdown-item" href="<?= site_url('index.php/Op_ver/ver_tolak_permanen/'.$row->id_siswa) ?>">Tolak Permanen</a>
                                         </div>
                                     </div>
                                     </td>
