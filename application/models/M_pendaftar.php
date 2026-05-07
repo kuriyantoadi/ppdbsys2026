@@ -32,6 +32,17 @@ class M_pendaftar extends CI_Model{
     $query = $this->db->get()->result();
     return $query;
   }
+
+  function ver_semua_tidak_sesuai()
+  {
+    $this->db->select('*');
+    $this->db->from('tb_pendaftar');
+    $this->db->join('tb_kompetensi_1', 'tb_pendaftar.id_kompetensi_1 = tb_kompetensi_1.id_kompetensi_1');
+    $this->db->join('tb_kompetensi_2', 'tb_pendaftar.id_kompetensi_2 = tb_kompetensi_2.id_kompetensi_2');
+    $this->db->where('status_verifikasi', 'Tidak Sesuai');
+    $query = $this->db->get()->result();
+    return $query;
+  }
   
   Public function tampil_kompetensi(){
     $tampil = $this->db->get('tb_kompetensi_1')->result();

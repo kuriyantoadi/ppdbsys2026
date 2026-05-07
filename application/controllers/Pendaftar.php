@@ -18,7 +18,7 @@ class Pendaftar extends CI_Controller
   //Login User
   public function index()
   {
-    $data['tampil'] = $this->M_pendaftar->ver_semua();
+    $data['tampil'] = $this->M_pendaftar->ver_semua_tidak_sesuai();
 
     $this->load->view('template/header-pendaftar.php');
     $this->load->view('pendaftar/verifikasi', $data);

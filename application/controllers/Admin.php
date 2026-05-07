@@ -443,6 +443,36 @@ class Admin extends CI_Controller {
 
       
     }
+
+
+    public function ver_tolak_permanen($id_siswa)
+    {
+      $id_siswa = htmlspecialchars($id_siswa, ENT_QUOTES);
+
+      if(empty($id_siswa)){
+        redirect('index.php/Admin/ver_semua/');
+
+      } else {
+
+        $data_edit = array(
+          'status_verifikasi' => 'Tolak Permanen',
+          'status_seleksi_administrasi' => 'Belum Seleksi',
+        );
+
+        $this->M_admin->siswa_edit_up($data_edit, $id_siswa);
+
+        $this->session->set_flashdata('msg', '
+            <div class="alert alert-denger alert-dismissible fade show" role="alert">
+              Verifikasi Pilihan <strong>Tolak Permanen</strong> Berhasil 
+              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>');
+            // var_dump($id_siswa);
+        redirect('index.php/Admin/ver_semua/');
+
+      }
+
+      
+    }
    // akhir verifikasi opsi
   
 
