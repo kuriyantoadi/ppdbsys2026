@@ -21,7 +21,7 @@
     </div>
 
 
-  <div style="padding: 50px" class="container-fluid">
+  <div class="container-fluid">
 
     <div class="row">    
       <div class="row g-4 mb-3">
