@@ -63,7 +63,7 @@
             ?>
             <tr>
                 <td><center><?= $no++ ?></td>
-                <td><?= $row->nama_siswa ?></td>
+                <td></p><?= $row->nama_siswa ?></td>
                 <!-- <td><center><?= $row->short_kompetensi_1 ?></td> -->
                 <td><center><?= $row->asal_sekolah ?></td>
                 <td><center>
