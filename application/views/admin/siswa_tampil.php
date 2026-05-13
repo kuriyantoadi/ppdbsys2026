@@ -59,8 +59,7 @@
                                     <td><?= $row->nama_siswa ?></td>
                                     <td><center><?= $row->short_kompetensi_1 ?></td>
                                     <td><center><?= $row->asal_sekolah ?></td>
-                                   <td><center>
-                                   <td><center>
+                                    <td><center>
                                         <?php if($row->status_verifikasi == 'Data Sesuai' ){ ?>
                                              <a class="btn-success waves-effect waves-light btn-sm btn-sm btn-rounded">Setujui</a>
                                         <?php }elseif($row->status_verifikasi == 'Proses'){ ?>
